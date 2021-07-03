@@ -1,2 +1,4 @@
-print("Тест на связь с GitHub")
-print("Тест на связь с GitHub №2")
+import requests
+from pprint import pprint
+from bs4 import BeautifulSoup as bs
+
