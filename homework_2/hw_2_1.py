@@ -47,11 +47,10 @@ def parser_item(item):
     vacancy_date = {}
 
     #vacancy_name
-    vacancy_name = item.find_all('a')
-    if len(vacancy_name) > 1:
-        vacancy_name = vacancy_name[-2].getText()
-    else:
-        vacancy_name = vacancy_name[0].getText()
+    vacancy_name = item.find('span', {'class': 'resume-search-item__name'}) \
+        .getText() \
+        .replace(u'\xa0', u' ')
+
     vacancy_date['vacancy_name'] = vacancy_name
 
     #salary
